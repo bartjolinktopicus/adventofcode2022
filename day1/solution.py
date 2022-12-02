@@ -1,19 +1,23 @@
-import time
+# from ..utils.timer import SolutionTimer
 
-calories = 0
-elves = []
+def solution():
+    calories = 0
+    elves = []
 
-starttime = time.time()
-with open('input.txt', 'r') as file:
-    for line in file.readlines():
-        try:
-            calories += int(line.strip())
-        except ValueError:
-            elves.append(calories)
-            calories = 0
+    with open('input', 'r') as file:
+        for line in file.readlines():
+            try:
+                calories += int(line.strip())
+            except ValueError:
+                elves.append(calories)
+                calories = 0
 
-print(f"Part 1: {max(elves)}")
-print(f"Part 2: {sum(sorted(elves)[-3:])}")
-endtime = time.time()
+    print(f"Part 1: {max(elves)}")
+    print(f"Part 2: {sum(sorted(elves)[-3:])}")
 
-print(f'Took {endtime - starttime} seconds!')
+def main():
+    # SolutionTimer().run(solution)
+    solution()
+
+if __name__ == '__main__':
+    main()
