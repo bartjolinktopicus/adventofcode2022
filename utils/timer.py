@@ -2,7 +2,7 @@ import time
 
 class SolutionTimer:
 
-    def run(function):
+    def run(self, function):
         starttime = time.time()
         function()
         endtime = time.time()

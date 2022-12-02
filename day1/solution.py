@@ -1,4 +1,12 @@
-# from ..utils.timer import SolutionTimer
+import sys
+
+sys.path.append('../')
+from utils.timer import SolutionTimer
+
+
+def main():
+    SolutionTimer().run(solution)
+
 
 def solution():
     calories = 0
@@ -15,9 +23,6 @@ def solution():
     print(f"Part 1: {max(elves)}")
     print(f"Part 2: {sum(sorted(elves)[-3:])}")
 
-def main():
-    # SolutionTimer().run(solution)
-    solution()
 
 if __name__ == '__main__':
     main()
